@@ -36,7 +36,8 @@ class CalendarWeekController {
   /// Index of week display on the screen
   int _currentWeekIndex = 0;
 
-  /// Store a list [DateTime] of weeks display on the screen
+  /// Store a list [DateTime] of week display on the screen
+  /// [selectedDate] is inside it
   final List<WeekItem> _weeks = [];
 
   /// [jumpToDate] show week contain [date] on the screen
@@ -122,7 +123,7 @@ class CalendarWeek extends StatefulWidget {
   final EdgeInsets marginMonth;
 
   /// Shape of day
-  final ShapeBorder dayShapeBorder;
+  final BorderRadius dayShapeBorder;
 
   /// List of decorations
   final List<DecorationItem> decorations;
@@ -194,7 +195,7 @@ class CalendarWeek extends StatefulWidget {
           Color dateBackgroundColor = Colors.transparent,
           Function(DateTime) onDatePressed,
           Function(DateTime) onDateLongPressed,
-          Color backgroundColor = Colors.white,
+          Color backgroundColor = Colors.transparent,
           List<String> dayOfWeek = dayOfWeekDefault,
           List<String> month = monthDefaults,
           bool showMonth = true,
@@ -203,7 +204,7 @@ class CalendarWeek extends StatefulWidget {
               const TextStyle(color: Colors.red, fontWeight: FontWeight.w600),
           EdgeInsets marginMonth = const EdgeInsets.symmetric(vertical: 4),
           EdgeInsets marginDayOfWeek = const EdgeInsets.symmetric(vertical: 4),
-          CircleBorder dayShapeBorder = const CircleBorder(),
+          BorderRadius dayShapeBorder = const BorderRadius(),
           List<DecorationItem> decorations = const [],
           CalendarWeekController controller,
           Function() onWeekChanged}) =>
